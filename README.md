@@ -74,7 +74,7 @@ You can use `cri` parser by overwriting `tail_container_parse.conf` via ConfigMa
 ```
 # configuration example
 <parse>
-  @type json
+  @type cri
   time_format '%Y-%m-%dT%H:%M:%S.%L%z'
 </parse>
 ```
