@@ -63,6 +63,22 @@ Each image has following configurations:
 - prometheus.conf: prometheus plugin for fluentd monitoring
 - systemd.conf: systemd plugin for collecting systemd-journal log. See also "Disable systemd input" section.
 
+### Daemonset definitions
+
+This Calyptia flavor Daemonset contains two types of daemonset definitions:
+
+* [minikube](minikube): Daemonset definitions for default minikube installation
+* [cri-o](cri-o): Daemonset definitions for containerd/cri-o environment
+
+Ths first one is minikube which is default installation.
+Default minikube installation, minikube still uses dockerd as k8s backend. This means that `tail_container_parse.conf` uses `json` parser for parsing container logs.
+
+The other is containerd/cri-o environment that is standard backend for recent kubernetes.
+This type of definitions use `cri` parser on `tail_container_parse.conf`.
+
+And top-level symlinked daemonset definition yaml files are cri-o versions.
+If you want to use minikube versions, please use daemonset definitions under [minikube](minikube) directory.
+
 ### Use CRI parser for containerd/cri-o logs
 
 By default, these images use `json` parser for parsing log files for containers.
