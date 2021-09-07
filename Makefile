@@ -53,6 +53,41 @@ eq = $(if $(or $(1),$(2)),$(and $(findstring $(1),$(2)),\
 
 no-cache-arg = $(if $(call eq, $(no-cache), yes), --no-cache, $(empty))
 
+## Daemonset targets
+
+DAEMONSET_YAMLS := \
+	calyptia-fluentd-daemonset-elasticsearch-rbac.yaml \
+	calyptia-fluentd-daemonset-elasticsearch.yaml \
+	calyptia-fluentd-daemonset-forward.yaml
+
+DAEMONSET_TARGETS := \
+	minikube \
+	cri-o
+
+# Default is first yaml from DAEMONSET_YAMLS list.
+DAEMONSET_YAML ?= $(word 1,$(subst :, ,$(word 1,$(DAEMONSET_YAMLS))))
+
+# Render the given erb template.
+#
+# Usage:
+#	make daemonset-yaml-template [DAEMONSET_YAML=] [TARGET=]
+daemonset-yaml-template:
+	mkdir -p $(TARGET)/$(dir $(DAEMONSET_YAML))
+	docker run --rm -i -v $(PWD)/templates/$(DAEMONSET_YAML).erb:/$(basename $(DAEMONSET_YAML)).erb:ro \
+	ruby:alpine erb -U -T 1 \
+		target='$(TARGET)' \
+	/$(basename $(DAEMONSET_YAML)).erb > $(TARGET)/$(DAEMONSET_YAML)
+
+daemonset:
+	(set -e ; $(foreach target,$(DAEMONSET_TARGETS), \
+		make daemonset-yaml-template TARGET=$(target) DAEMONSET_YAML=$(DAEMONSET_YAML); \
+	))
+
+daemonset-all:
+	(set -e ; $(foreach daemonset_yaml,$(DAEMONSET_YAMLS), \
+		make daemonset DAEMONSET_YAML=$(daemonset_yaml); \
+	))
+
 # Build Docker image.
 #
 # Usage:
