@@ -28,6 +28,10 @@ spec:
             value: "REMOTE_ENDPOINT"
           - name:  FLUENT_FOWARD_PORT
             value: "18080"
+          # - name: FLUENTD_SYSTEMD_CONF
+          #   value: "disable"
+          # Calyptia Authentication
+          # ======================
           - name: FLUENT_CALYPTIA_MONITORING_CALYPTIA_API_KEY
             value: "YOUR_API_KEY"
         resources:

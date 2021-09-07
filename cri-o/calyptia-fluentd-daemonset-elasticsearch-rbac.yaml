@@ -87,6 +87,10 @@ spec:
           # ======================
           - name: FLUENT_CALYPTIA_MONITORING_CALYPTIA_API_KEY
             value: "YOUR_API_KEY"
+          - name: FLUENT_CONTAINER_TAIL_PARSER_TYPE
+            value: "cri"
+          - name: FLUENT_CONTAINER_TAIL_PARSER_TIME_FORMAT
+            value: "%Y-%m-%dT%H:%M:%S.%L%z"
         resources:
           limits:
             memory: 200Mi
