@@ -1,0 +1,19 @@
+name: Docker image building
+on:
+  push:
+  pull_request:
+jobs:
+  build:
+    name: Build
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - dockerfile: v1.14/debian-elasticsearch7
+          - dockerfile: v1.14/debian-forward
+          - dockerfile: v1.14/debian-kafka2
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Build
+        run: make image DOCKERFILE=${{ matrix.dockerfile }} VERSION=test
