@@ -9,15 +9,15 @@ See also GitHub container repository page: https://github.com/calyptia/calyptia-
 
 ##### x86_64 images
 - `Elasticsearch7` [Dockerfile](docker-image/v1.14/debian-elasticsearch7/Dockerfile)
-  - `docker pull ghcr.io/fluent/fluentd-kubernetes-daemonset:v1.14.0-debian-elasticsearch7-amd64-1.0`
+  - `docker pull ghcr.io/fluent/fluentd-kubernetes-daemonset:v1.14.1-debian-elasticsearch7-amd64-1.0`
   - `docker pull ghcr.io/fluent/fluentd-kubernetes-daemonset:v1.14-debian-elasticsearch7-amd64-1`
   - `docker pull ghcr.io/fluent/fluentd-kubernetes-daemonset:v1-debian-elasticsearch-amd64`
 - `Forward` [Dockerfile](docker-image/v1.14/debian-forward/Dockerfile)
-  - `docker pull ghcr.io/fluent/fluentd-kubernetes-daemonset:v1.14.0-debian-forward-amd64-1.0`
+  - `docker pull ghcr.io/fluent/fluentd-kubernetes-daemonset:v1.14.1-debian-forward-amd64-1.0`
   - `docker pull ghcr.io/fluent/fluentd-kubernetes-daemonset:v1.14-debian-forward-amd64-1`
   - `docker pull ghcr.io/fluent/fluentd-kubernetes-daemonset:v1-debian-forward-amd64`
 - `Kafka2` [Dockerfile](docker-image/v1.14/debian-kafka2/Dockerfile)
-  - `docker pull ghcr.io/fluent/fluentd-kubernetes-daemonset:v1.14.0-debian-kafka2-amd64-1.0`
+  - `docker pull ghcr.io/fluent/fluentd-kubernetes-daemonset:v1.14.1-debian-kafka2-amd64-1.0`
   - `docker pull ghcr.io/fluent/fluentd-kubernetes-daemonset:v1.14-debian-kafka2-amd64-1`
   - `docker pull ghcr.io/fluent/fluentd-kubernetes-daemonset:v1-debian-kafka2-amd64`
 
