@@ -12,9 +12,9 @@
 
 IMAGE_NAME := ghcr.io/calyptia/calyptia-fluentd-kubernetes-daemonset
 X86_IMAGES := \
-	v1.14/debian-elasticsearch7:v1.14.1-debian-elasticsearch7-amd64-1.0,v1.14-debian-elasticsearch7-amd64-1,v1-debian-elasticsearch-amd64 \
-	v1.14/debian-forward:v1.14.1-debian-forward-amd64-1.0,v1.14-debian-forward-amd64-1,v1-debian-forward-amd64 \
-	v1.14/debian-kafka2:v1.14.1-debian-kafka2-amd64-1.0,v1.14-debian-kafka2-amd64-1,v1-debian-kafka2-amd64 \
+	v1.14/debian-elasticsearch7:v1.14.2-debian-elasticsearch7-amd64-1.0,v1.14-debian-elasticsearch7-amd64-1,v1-debian-elasticsearch-amd64 \
+	v1.14/debian-forward:v1.14.2-debian-forward-amd64-1.0,v1.14-debian-forward-amd64-1,v1-debian-forward-amd64 \
+	v1.14/debian-kafka2:v1.14.2-debian-kafka2-amd64-1.0,v1.14-debian-kafka2-amd64-1,v1-debian-kafka2-amd64 \
 
 #	<Dockerfile>:<version>,<tag1>,<tag2>,...
 # FIXME: Provide ARM64 images later.
