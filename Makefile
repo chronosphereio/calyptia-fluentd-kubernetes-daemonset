@@ -11,19 +11,16 @@
 #	make release-all
 
 IMAGE_NAME := ghcr.io/calyptia/calyptia-fluentd-kubernetes-daemonset
-X86_IMAGES := \
-	v1.14/debian-elasticsearch7:v1.14.2-debian-elasticsearch7-amd64-1.0,v1.14-debian-elasticsearch7-amd64-1,v1-debian-elasticsearch-amd64 \
-	v1.14/debian-forward:v1.14.2-debian-forward-amd64-1.0,v1.14-debian-forward-amd64-1,v1-debian-forward-amd64 \
-	v1.14/debian-kafka2:v1.14.2-debian-kafka2-amd64-1.0,v1.14-debian-kafka2-amd64-1,v1-debian-kafka2-amd64 \
+IMAGES := \
+	v1.14/debian-elasticsearch7:v1.14.2-debian-elasticsearch7-1.1,v1.14-debian-elasticsearch7-1,v1-debian-elasticsearch \
+	v1.14/debian-forward:v1.14.2-debian-forward-1.1,v1.14-debian-forward-1,v1-debian-forward \
+	v1.14/debian-kafka2:v1.14.2-debian-kafka2-1.1,v1.14-debian-kafka2-amd64-1,v1-debian-kafka2 \
 
 #	<Dockerfile>:<version>,<tag1>,<tag2>,...
-# FIXME: Provide ARM64 images later.
-# ARM64_IMAGES := \
-# 	v1.14/arm64/debian-elasticsearch7:v1.14.0-debian-elasticsearch7-arm64-1.0,v1.14-debian-elasticsearch7-arm64-1,v1-debian-elasticsearch-arm64 \
-# 	v1.14/arm64/debian-forward:v1.14.0-debian-forward-arm64-1.0,v1.14-debian-forward-arm64-1 \
-# 	v1.14/arm64/debian-kafka2:v1.14.0-debian-kafka2-arm64-1.0,v1.14-debian-kafka2-arm64-1 \
 
-ALL_IMAGES := $(X86_IMAGES) # $(ARM64_IMAGES)
+ALL_IMAGES := $(IMAGES) # We provides buildx sub command built images.
+
+PLATFORMS := linux/amd64,linux/arm64
 
 comma := ,
 empty :=
@@ -95,6 +92,9 @@ daemonset-all:
 image:
 	docker build $(no-cache-arg) -t $(IMAGE_NAME):$(VERSION) docker-image/$(DOCKERFILE)
 
+multiarch-image:
+	docker buildx build $(no-cache-arg) -t $(IMAGE_NAME):$(VERSION) docker-image/$(DOCKERFILE) --build-arg VERSION=$(VERSION) --platform=$(PLATFORMS)
+
 # Build all supported Docker images.
 #
 # Usage:
@@ -120,6 +120,11 @@ tags:
 		docker tag $(IMAGE_NAME):$(VERSION) $(IMAGE_NAME):$(tag) ; \
 	))
 
+multiarch-tags:
+	(set -e ;  $(foreach tag, $(parsed-tags), \
+		docker buildx build -t $(IMAGE_NAME):$(tag) docker-image/$(DOCKERFILE) --build-arg VERSION=$(VERSION) --platform=$(PLATFORMS) ; \
+	))
+
 # Make manual release of all supported Docker images to GitHub Container registry.
 #
 # Usage:
@@ -142,6 +147,10 @@ push:
 		docker push $(IMAGE_NAME):$(tag) ; \
 	))
 
+multiarch-push:
+	(set -e ;  $(foreach tag, $(parsed-tags), \
+		docker buildx build -t $(IMAGE_NAME):$(tag) docker-image/$(DOCKERFILE) --build-arg VERSION=$(VERSION) --platform=$(PLATFORMS) --push ; \
+	))
 
 # Make manual release of Docker images to GitHub Container registry.
 #

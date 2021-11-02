@@ -61,7 +61,7 @@ spec:
         effect: NoSchedule
       containers:
       - name: calyptia-fluentd
-        image: ghcr.io/calyptia/calyptia-fluentd-kubernetes-daemonset:v1-debian-elasticsearch-amd64
+        image: ghcr.io/calyptia/calyptia-fluentd-kubernetes-daemonset:v1-debian-elasticsearch
         env:
           - name:  FLUENT_ELASTICSEARCH_HOST
             value: "elasticsearch-logging"

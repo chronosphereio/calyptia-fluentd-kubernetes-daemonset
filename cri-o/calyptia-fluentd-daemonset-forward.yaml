@@ -22,7 +22,7 @@ spec:
         effect: NoSchedule
       containers:
       - name: calyptia-fluentd
-        image: ghcr.io/calyptia/calyptia-fluentd-kubernetes-daemonset:v1-debian-forward-amd64
+        image: ghcr.io/calyptia/calyptia-fluentd-kubernetes-daemonset:v1-debian-forward
         env:
           - name:  FLUENT_FOWARD_HOST
             value: "REMOTE_ENDPOINT"

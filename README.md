@@ -6,21 +6,47 @@ See also GitHub container repository page: https://github.com/calyptia/calyptia-
 
 ### Debian
 
+##### Multi-Arch images
+- `Elasticsearch7`
+  - `docker pull ghcr.io/fluent/fluentd-kubernetes-daemonset:v1.14.2-debian-elasticsearch7-1.1`
+  - `docker pull ghcr.io/fluent/fluentd-kubernetes-daemonset:v1.14-debian-elasticsearch7-1`
+  - `docker pull ghcr.io/fluent/fluentd-kubernetes-daemonset:v1-debian-elasticsearch`
+- `Forward`
+  - `docker pull ghcr.io/fluent/fluentd-kubernetes-daemonset:v1.14.2-debian-forward-1.1`
+  - `docker pull ghcr.io/fluent/fluentd-kubernetes-daemonset:v1.14-debian-forward-1`
+  - `docker pull ghcr.io/fluent/fluentd-kubernetes-daemonset:v1-debian-forward`
+- `Kafka2`
+  - `docker pull ghcr.io/fluent/fluentd-kubernetes-daemonset:v1.14.2-debian-kafka2-1.1`
+  - `docker pull ghcr.io/fluent/fluentd-kubernetes-daemonset:v1.14-debian-kafka2-1`
+  - `docker pull ghcr.io/fluent/fluentd-kubernetes-daemonset:v1-debian-kafka2`
 
 ##### x86_64 images
 - `Elasticsearch7` [Dockerfile](docker-image/v1.14/debian-elasticsearch7/Dockerfile)
-  - `docker pull ghcr.io/fluent/fluentd-kubernetes-daemonset:v1.14.2-debian-elasticsearch7-amd64-1.0`
-  - `docker pull ghcr.io/fluent/fluentd-kubernetes-daemonset:v1.14-debian-elasticsearch7-amd64-1`
-  - `docker pull ghcr.io/fluent/fluentd-kubernetes-daemonset:v1-debian-elasticsearch-amd64`
+  - `docker pull ghcr.io/fluent/fluentd-kubernetes-daemonset:v1.14.2-debian-elasticsearch7-1.1`
+  - `docker pull ghcr.io/fluent/fluentd-kubernetes-daemonset:v1.14-debian-elasticsearch7-1`
+  - `docker pull ghcr.io/fluent/fluentd-kubernetes-daemonset:v1-debian-elasticsearch`
 - `Forward` [Dockerfile](docker-image/v1.14/debian-forward/Dockerfile)
-  - `docker pull ghcr.io/fluent/fluentd-kubernetes-daemonset:v1.14.2-debian-forward-amd64-1.0`
-  - `docker pull ghcr.io/fluent/fluentd-kubernetes-daemonset:v1.14-debian-forward-amd64-1`
-  - `docker pull ghcr.io/fluent/fluentd-kubernetes-daemonset:v1-debian-forward-amd64`
+  - `docker pull ghcr.io/fluent/fluentd-kubernetes-daemonset:v1.14.2-debian-forward-1.1`
+  - `docker pull ghcr.io/fluent/fluentd-kubernetes-daemonset:v1.14-debian-forward-1`
+  - `docker pull ghcr.io/fluent/fluentd-kubernetes-daemonset:v1-debian-forward`
 - `Kafka2` [Dockerfile](docker-image/v1.14/debian-kafka2/Dockerfile)
-  - `docker pull ghcr.io/fluent/fluentd-kubernetes-daemonset:v1.14.2-debian-kafka2-amd64-1.0`
+  - `docker pull ghcr.io/fluent/fluentd-kubernetes-daemonset:v1.14.2-debian-kafka2-1.1`
   - `docker pull ghcr.io/fluent/fluentd-kubernetes-daemonset:v1.14-debian-kafka2-amd64-1`
-  - `docker pull ghcr.io/fluent/fluentd-kubernetes-daemonset:v1-debian-kafka2-amd64`
+  - `docker pull ghcr.io/fluent/fluentd-kubernetes-daemonset:v1-debian-kafka2`
 
+##### arm64 images
+- `Elasticsearch7` [Dockerfile](docker-image/v1.14/debian-elasticsearch7/Dockerfile)
+  - `docker pull ghcr.io/fluent/fluentd-kubernetes-daemonset:v1.14.2-debian-elasticsearch7-1.1`
+  - `docker pull ghcr.io/fluent/fluentd-kubernetes-daemonset:v1.14-debian-elasticsearch7-1`
+  - `docker pull ghcr.io/fluent/fluentd-kubernetes-daemonset:v1-debian-elasticsearch`
+- `Forward` [Dockerfile](docker-image/v1.14/debian-forward/Dockerfile)
+  - `docker pull ghcr.io/fluent/fluentd-kubernetes-daemonset:v1.14.2-debian-forward-1.1`
+  - `docker pull ghcr.io/fluent/fluentd-kubernetes-daemonset:v1.14-debian-forward-1`
+  - `docker pull ghcr.io/fluent/fluentd-kubernetes-daemonset:v1-debian-forward`
+- `Kafka2` [Dockerfile](docker-image/v1.14/debian-kafka2/Dockerfile)
+  - `docker pull ghcr.io/fluent/fluentd-kubernetes-daemonset:v1.14.2-debian-kafka2-1.1`
+  - `docker pull ghcr.io/fluent/fluentd-kubernetes-daemonset:v1.14-debian-kafka2-amd64-1`
+  - `docker pull ghcr.io/fluent/fluentd-kubernetes-daemonset:v1-debian-kafka2`
 
 You can also use `v1-debian-PLUGIN` tag to refer latest v1 image, e.g. `v1-debian-elasticsearch`. On production, strict tag is better to avoid unexpected update.
 
