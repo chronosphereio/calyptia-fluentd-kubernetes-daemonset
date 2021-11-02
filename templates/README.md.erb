@@ -4,8 +4,7 @@
 
 See also GitHub container repository page: https://github.com/calyptia/calyptia-fluentd-kubernetes-daemonset/pkgs/container/calyptia-fluentd-kubernetes-daemonset
 <% images = all_images.split(" ") %>
-<% debian_arm64 = images.select { |i| i.match(/debian-.*-arm64/) } %>
-<% debian = images.select { |i| i.match("debian") }.reject { |i| debian_arm64.include?(i) } %>
+<% debian = images.select { |i| i.match("debian") } %>
 <% alpine = images.select { |i| i.match("alpine") } %>
 <% no_built_x86_64_images = %w() %>
 <% no_built_arm64_images = %w() %>
@@ -13,7 +12,6 @@ See also GitHub container repository page: https://github.com/calyptia/calyptia-
 
 ### Debian
 
-<% if !debian_arm64.empty? %>
 ##### Multi-Arch images
 <% debian.each do |image| %>
 <% path = image.split(":").first.sub("-amd64",""); tags = image.split(":").last %>
@@ -21,7 +19,6 @@ See also GitHub container repository page: https://github.com/calyptia/calyptia-
 - `<%= tags.split(",").first.split("-")[2].capitalize %>`
 <% tags.split(",").each do |tag| %>
   - `docker pull ghcr.io/fluent/fluentd-kubernetes-daemonset:<%= tag.sub("-amd64","") %>`
-<% end %>
 <% end %>
 <% end %>
 
@@ -35,15 +32,13 @@ See also GitHub container repository page: https://github.com/calyptia/calyptia-
 <% end %>
 <% end %>
 
-<% if !debian_arm64.empty? %>
 ##### arm64 images
-<% debian_arm64.each do |image| %>
+<% debian.each do |image| %>
 <% path = image.split(":").first; tags = image.split(":").last %>
 - `<%= tags.split(",").first.split("-")[2].capitalize %>` [Dockerfile](docker-image/<%= path %>/Dockerfile)
 <% next if no_built_arm64_images.any? do |component| tags.include?(component) end %>
 <% tags.split(",").each do |tag| %>
   - `docker pull ghcr.io/fluent/fluentd-kubernetes-daemonset:<%= tag %>`
-<% end %>
 <% end %>
 <% end %>
 
