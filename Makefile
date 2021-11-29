@@ -11,10 +11,10 @@
 #	make release-all
 
 IMAGE_NAME := ghcr.io/calyptia/calyptia-fluentd-kubernetes-daemonset
-IMAGES := \
-	v1.14/debian-elasticsearch7:v1.14.2-debian-elasticsearch7-1.1,v1.14-debian-elasticsearch7-1,v1-debian-elasticsearch \
-	v1.14/debian-forward:v1.14.2-debian-forward-1.1,v1.14-debian-forward-1,v1-debian-forward \
-	v1.14/debian-kafka2:v1.14.2-debian-kafka2-1.1,v1.14-debian-kafka2-amd64-1,v1-debian-kafka2 \
+IMAGES :=\
+	v1.14/debian-elasticsearch7:v1.14.3-debian-elasticsearch7-1.0,v1.14-debian-elasticsearch7-1,v1-debian-elasticsearch \
+	v1.14/debian-forward:v1.14.3-debian-forward-1.0,v1.14-debian-forward-1,v1-debian-forward \
+	v1.14/debian-kafka2:v1.14.3-debian-kafka2-1.0,v1.14-debian-kafka2-amd64-1,v1-debian-kafka2 \
 
 #	<Dockerfile>:<version>,<tag1>,<tag2>,...
 
