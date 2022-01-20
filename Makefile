@@ -179,7 +179,7 @@ release-all:
 #
 # Usage:
 #	make src [DOCKERFILE=] [VERSION=] [TAGS=t1,t2,...]
-src: dockerfile gemfile fluent.conf systemd.conf prometheus.conf kubernetes.conf plugins entrypoint.sh cluster-autoscaler.conf containers.conf docker.conf etcd.conf glbc.conf kube-apiserver-audit.conf kube-apiserver.conf kube-controller-manager.conf kube-proxy.conf kube-scheduler.conf kubelet.conf rescheduler.conf salt.conf startupscript.conf
+src: dockerfile gemfile fluent.conf calyptia.conf systemd.conf prometheus.conf kubernetes.conf plugins entrypoint.sh cluster-autoscaler.conf containers.conf docker.conf etcd.conf glbc.conf kube-apiserver-audit.conf kube-apiserver.conf kube-controller-manager.conf kube-proxy.conf kube-scheduler.conf kubelet.conf rescheduler.conf salt.conf startupscript.conf
 
 # Generate sources for all supported Docker images.
 #
@@ -414,6 +414,7 @@ plugins-all:
         gemfile gemfile-all \
         entrypoint.sh entrypoint.sh-all \
         fluent.conf fluent.conf-all \
+        calyptia.conf calyptia.conf-all \
         kubernetes.conf kubernetes.conf-all\
         cluster-autoscaler.conf cluster-autoscaler.conf-all \
         containers.conf containers.conf-all \
