@@ -37,6 +37,7 @@ COPY ./conf/kubernetes.conf /fluentd/etc/
 COPY ./conf/prometheus.conf /fluentd/etc/
 COPY ./conf/tail_container_parse.conf /fluentd/etc/
 COPY ./conf/calyptia.conf /fluentd/etc/
+COPY ./conf/aws_credentials.conf /fluentd/etc/
 COPY ./conf/kubernetes/*.conf /fluentd/etc/kubernetes/
 RUN touch /fluentd/etc/disable.conf
 
