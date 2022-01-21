@@ -169,7 +169,7 @@ You can disable calyptia monitoring input plugin by setting `disable` to `FLUENT
 ### Disable AWS OpenSearch credentials injection on OpenSearch plugin
 
 By default, OpenSearch image injects the credentails for AWS OpenSearch Service.
-You can disable to include AWS credentials configuration by setting `disable` to `FLUENTD_AWS_OPENSEARTCH_SERVICE_CREDENTAILS` environment variable in your kubernetes configuration.
+You can disable to include AWS credentials configuration by setting `disable` to `FLUENTD_AWS_OPENSEARTCH_SERVICE_CREDENTAILS_CONF` environment variable in your kubernetes configuration.
 
 ## Note
 
