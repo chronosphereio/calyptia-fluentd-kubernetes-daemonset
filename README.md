@@ -12,7 +12,7 @@ See also GitHub container repository page: https://github.com/calyptia/calyptia-
   - `docker pull ghcr.io/fluent/fluentd-kubernetes-daemonset:v1.14-debian-elasticsearch7-1`
   - `docker pull ghcr.io/fluent/fluentd-kubernetes-daemonset:v1-debian-elasticsearch`
 - `Opensearch`
-  - `docker pull ghcr.io/fluent/fluentd-kubernetes-daemonset:v1.14.4-debian-opensearch-1.0`
+  - `docker pull ghcr.io/fluent/fluentd-kubernetes-daemonset:v1.14.4-debian-opensearch-1.1`
   - `docker pull ghcr.io/fluent/fluentd-kubernetes-daemonset:v1.14-debian-open-1`
   - `docker pull ghcr.io/fluent/fluentd-kubernetes-daemonset:v1-debian-opensearch`
 - `Forward`
@@ -30,7 +30,7 @@ See also GitHub container repository page: https://github.com/calyptia/calyptia-
   - `docker pull ghcr.io/fluent/fluentd-kubernetes-daemonset:v1.14-debian-elasticsearch7-1`
   - `docker pull ghcr.io/fluent/fluentd-kubernetes-daemonset:v1-debian-elasticsearch`
 - `Opensearch` [Dockerfile](docker-image/v1.14/debian-opensearch/Dockerfile)
-  - `docker pull ghcr.io/fluent/fluentd-kubernetes-daemonset:v1.14.4-debian-opensearch-1.0`
+  - `docker pull ghcr.io/fluent/fluentd-kubernetes-daemonset:v1.14.4-debian-opensearch-1.1`
   - `docker pull ghcr.io/fluent/fluentd-kubernetes-daemonset:v1.14-debian-open-1`
   - `docker pull ghcr.io/fluent/fluentd-kubernetes-daemonset:v1-debian-opensearch`
 - `Forward` [Dockerfile](docker-image/v1.14/debian-forward/Dockerfile)
@@ -48,7 +48,7 @@ See also GitHub container repository page: https://github.com/calyptia/calyptia-
   - `docker pull ghcr.io/fluent/fluentd-kubernetes-daemonset:v1.14-debian-elasticsearch7-1`
   - `docker pull ghcr.io/fluent/fluentd-kubernetes-daemonset:v1-debian-elasticsearch`
 - `Opensearch` [Dockerfile](docker-image/v1.14/debian-opensearch/Dockerfile)
-  - `docker pull ghcr.io/fluent/fluentd-kubernetes-daemonset:v1.14.4-debian-opensearch-1.0`
+  - `docker pull ghcr.io/fluent/fluentd-kubernetes-daemonset:v1.14.4-debian-opensearch-1.1`
   - `docker pull ghcr.io/fluent/fluentd-kubernetes-daemonset:v1.14-debian-open-1`
   - `docker pull ghcr.io/fluent/fluentd-kubernetes-daemonset:v1-debian-opensearch`
 - `Forward` [Dockerfile](docker-image/v1.14/debian-forward/Dockerfile)
@@ -165,6 +165,11 @@ You can disable prometheus input plugin by setting `disable` to `FLUENTD_PROMETH
 
 By default, the latest images launch `calyptia_monitoring` plugin to monitor fluentd via Calyptia Monitoring service.
 You can disable calyptia monitoring input plugin by setting `disable` to `FLUENTD_CALYPTIA_CONF` environment variable in your kubernetes configuration.
+
+### Disable AWS OpenSearch credentials injection on OpenSearch plugin
+
+By default, OpenSearch image injects the credentails for AWS OpenSearch Service.
+You can disable to include AWS credentials configuration by setting `disable` to `FLUENTD_AWS_OPENSEARTCH_SERVICE_CREDENTAILS_CONF` environment variable in your kubernetes configuration.
 
 ## Note
 

@@ -13,7 +13,7 @@
 IMAGE_NAME := ghcr.io/calyptia/calyptia-fluentd-kubernetes-daemonset
 IMAGES :=\
 	v1.14/debian-elasticsearch7:v1.14.4-debian-elasticsearch7-1.0,v1.14-debian-elasticsearch7-1,v1-debian-elasticsearch \
-	v1.14/debian-opensearch:v1.14.4-debian-opensearch-1.0,v1.14-debian-open-1,v1-debian-opensearch \
+	v1.14/debian-opensearch:v1.14.4-debian-opensearch-1.1,v1.14-debian-open-1,v1-debian-opensearch \
 	v1.14/debian-forward:v1.14.4-debian-forward-1.0,v1.14-debian-forward-1,v1-debian-forward \
 	v1.14/debian-kafka2:v1.14.4-debian-kafka2-1.0,v1.14-debian-kafka2-amd64-1,v1-debian-kafka2 \
 
@@ -22,6 +22,8 @@ IMAGES :=\
 ALL_IMAGES := $(IMAGES) # We provides buildx sub command built images.
 
 PLATFORMS := linux/amd64,linux/arm64
+
+NEED_AWS_CREDENTIALS_IMAGE := v1.14/debian-opensearch
 
 comma := ,
 empty :=
@@ -56,6 +58,8 @@ no-cache-arg = $(if $(call eq, $(no-cache), yes), --no-cache, $(empty))
 DAEMONSET_YAMLS := \
 	calyptia-fluentd-daemonset-elasticsearch-rbac.yaml \
 	calyptia-fluentd-daemonset-elasticsearch.yaml \
+	calyptia-fluentd-daemonset-opensearch-rbac.yaml \
+	calyptia-fluentd-daemonset-opensearch.yaml \
 	calyptia-fluentd-daemonset-forward.yaml
 
 DAEMONSET_TARGETS := \
@@ -179,7 +183,7 @@ release-all:
 #
 # Usage:
 #	make src [DOCKERFILE=] [VERSION=] [TAGS=t1,t2,...]
-src: dockerfile gemfile fluent.conf calyptia.conf systemd.conf prometheus.conf kubernetes.conf plugins entrypoint.sh cluster-autoscaler.conf containers.conf docker.conf etcd.conf glbc.conf kube-apiserver-audit.conf kube-apiserver.conf kube-controller-manager.conf kube-proxy.conf kube-scheduler.conf kubelet.conf rescheduler.conf salt.conf startupscript.conf tail_container_parse.conf
+src: dockerfile gemfile fluent.conf calyptia.conf systemd.conf prometheus.conf kubernetes.conf plugins entrypoint.sh cluster-autoscaler.conf containers.conf docker.conf etcd.conf glbc.conf kube-apiserver-audit.conf kube-apiserver.conf kube-controller-manager.conf kube-proxy.conf kube-scheduler.conf kubelet.conf rescheduler.conf salt.conf startupscript.conf tail_container_parse.conf aws_credentials.conf
 
 # Generate sources for all supported Docker images.
 #
@@ -370,6 +374,15 @@ tail_container_parse.conf:
 tail_container_parse.conf-all:
 	make each-image TARGET=tail_container_parse.conf
 
+aws_credentials.conf:
+ifeq "$(DOCKERFILE)" "$(NEED_AWS_CREDENTIALS_IMAGE)"
+	make container-image-template FILE=conf/aws_credentials.conf
+else
+	@echo "Skip generating aws_credentials.conf for ${DOCKERFILE}"
+endif
+
+aws_credentials.conf-all:
+	make each-image TARGET=aws_credentials.conf
 
 prometheus.conf:
 	make container-image-template FILE=conf/prometheus.conf
