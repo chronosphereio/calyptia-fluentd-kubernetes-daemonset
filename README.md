@@ -166,6 +166,11 @@ You can disable prometheus input plugin by setting `disable` to `FLUENTD_PROMETH
 By default, the latest images launch `calyptia_monitoring` plugin to monitor fluentd via Calyptia Monitoring service.
 You can disable calyptia monitoring input plugin by setting `disable` to `FLUENTD_CALYPTIA_CONF` environment variable in your kubernetes configuration.
 
+### Disable AWS OpenSearch credentials injection on OpenSearch plugin
+
+By default, OpenSearch image injects the credentails for AWS OpenSearch Service.
+You can disable to include AWS credentials configuration by setting `disable` to `FLUENTD_AWS_OPENSEARTCH_SERVICE_CREDENTAILS` environment variable in your kubernetes configuration.
+
 ## Note
 
 ### kafka image doesn't support zookeeper parameters
