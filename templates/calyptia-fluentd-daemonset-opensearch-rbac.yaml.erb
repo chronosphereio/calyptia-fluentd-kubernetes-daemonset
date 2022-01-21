@@ -1,0 +1,129 @@
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: calyptia-fluentd
+  namespace: kube-system
+
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: calyptia-fluentd
+rules:
+- apiGroups:
+  - ""
+  resources:
+  - pods
+  - namespaces
+  verbs:
+  - get
+  - list
+  - watch
+
+---
+kind: ClusterRoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: calyptia-fluentd
+roleRef:
+  kind: ClusterRole
+  name: calyptia-fluentd
+  apiGroup: rbac.authorization.k8s.io
+subjects:
+- kind: ServiceAccount
+  name: calyptia-fluentd
+  namespace: kube-system
+---
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: calyptia-fluentd
+  namespace: kube-system
+  labels:
+    k8s-app: calyptia-fluentd-logging
+    version: v1
+spec:
+  selector:
+    matchLabels:
+      k8s-app: calyptia-fluentd-logging
+      version: v1
+  template:
+    metadata:
+      labels:
+        k8s-app: calyptia-fluentd-logging
+        version: v1
+    spec:
+      serviceAccount: calyptia-fluentd
+      serviceAccountName: calyptia-fluentd
+      tolerations:
+      - key: node-role.kubernetes.io/master
+        effect: NoSchedule
+      containers:
+      - name: calyptia-fluentd
+        image: ghcr.io/calyptia/calyptia-fluentd-kubernetes-daemonset:v1-debian-opensearch
+        env:
+          - name:  FLUENT_OPENSEARCH_HOST
+            value: "opensearch-logging"
+          - name:  FLUENT_OPENSEARCH_PORT
+            value: "9200"
+          - name: FLUENT_OPENSEARCH_SCHEME
+            value: "http"
+          # Option to configure opensearch plugin with self signed certs
+          # ================================================================
+          - name: FLUENT_OPENSEARCH_SSL_VERIFY
+            value: "true"
+          # Option to configure opensearch plugin with tls
+          # ================================================================
+          - name: FLUENT_OPENSEARCH_SSL_VERSION
+            value: "TLSv1_2"
+          # X-Pack Authentication
+          # =====================
+          - name: FLUENT_OPENSEARCH_USER
+            value: "elastic"
+          - name: FLUENT_OPENSEARCH_PASSWORD
+            value: "changeme"
+          # Calyptia Authentication
+          # ======================
+          - name: FLUENT_CALYPTIA_MONITORING_CALYPTIA_API_KEY
+            value: "YOUR_API_KEY"
+          # - name: FLUENTD_AWS_OPENSEARTCH_SERVICE_CREDENTAILS_CONF
+          #   value: "disable"
+<%if target == "cri-o" %>
+          - name: FLUENT_CONTAINER_TAIL_PARSER_TYPE
+            value: "cri"
+          - name: FLUENT_CONTAINER_TAIL_PARSER_TIME_FORMAT
+            value: "%Y-%m-%dT%H:%M:%S.%L%z"
+<% end %>
+        resources:
+          limits:
+            memory: 200Mi
+          requests:
+            cpu: 100m
+            memory: 200Mi
+        volumeMounts:
+        - name: varlog
+          mountPath: /var/log
+<%if target == "minikube" %>
+        - name: dockercontainerlogdirectory
+          mountPath: /var/lib/docker/containers
+          readOnly: true
+<% else %>
+        - name: dockercontainerlogdirectory
+          mountPath: /var/log/pods
+          readOnly: true
+<% end %>
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - name: varlog
+        hostPath:
+          path: /var/log
+<%if target == "minikube" %>
+      - name: dockercontainerlogdirectory
+        hostPath:
+          path: /var/lib/docker/containers
+<% else %>
+      - name: dockercontainerlogdirectory
+        hostPath:
+          path: /var/log/pods
+<% end %>

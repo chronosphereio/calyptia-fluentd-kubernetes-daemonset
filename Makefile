@@ -58,6 +58,8 @@ no-cache-arg = $(if $(call eq, $(no-cache), yes), --no-cache, $(empty))
 DAEMONSET_YAMLS := \
 	calyptia-fluentd-daemonset-elasticsearch-rbac.yaml \
 	calyptia-fluentd-daemonset-elasticsearch.yaml \
+	calyptia-fluentd-daemonset-opensearch-rbac.yaml \
+	calyptia-fluentd-daemonset-opensearch.yaml \
 	calyptia-fluentd-daemonset-forward.yaml
 
 DAEMONSET_TARGETS := \
