@@ -13,7 +13,7 @@ See also GitHub container repository page: https://github.com/calyptia/calyptia-
   - `docker pull ghcr.io/fluent/fluentd-kubernetes-daemonset:v1-debian-elasticsearch`
 - `Opensearch`
   - `docker pull ghcr.io/fluent/fluentd-kubernetes-daemonset:v1.14.4-debian-opensearch-1.3`
-  - `docker pull ghcr.io/fluent/fluentd-kubernetes-daemonset:v1.14-debian-open-1`
+  - `docker pull ghcr.io/fluent/fluentd-kubernetes-daemonset:v1.14-debian-opensearch-1`
   - `docker pull ghcr.io/fluent/fluentd-kubernetes-daemonset:v1-debian-opensearch`
 - `Forward`
   - `docker pull ghcr.io/fluent/fluentd-kubernetes-daemonset:v1.14.4-debian-forward-1.0`
@@ -31,7 +31,7 @@ See also GitHub container repository page: https://github.com/calyptia/calyptia-
   - `docker pull ghcr.io/fluent/fluentd-kubernetes-daemonset:v1-debian-elasticsearch`
 - `Opensearch` [Dockerfile](docker-image/v1.14/debian-opensearch/Dockerfile)
   - `docker pull ghcr.io/fluent/fluentd-kubernetes-daemonset:v1.14.4-debian-opensearch-1.3`
-  - `docker pull ghcr.io/fluent/fluentd-kubernetes-daemonset:v1.14-debian-open-1`
+  - `docker pull ghcr.io/fluent/fluentd-kubernetes-daemonset:v1.14-debian-opensearch-1`
   - `docker pull ghcr.io/fluent/fluentd-kubernetes-daemonset:v1-debian-opensearch`
 - `Forward` [Dockerfile](docker-image/v1.14/debian-forward/Dockerfile)
   - `docker pull ghcr.io/fluent/fluentd-kubernetes-daemonset:v1.14.4-debian-forward-1.0`
@@ -49,7 +49,7 @@ See also GitHub container repository page: https://github.com/calyptia/calyptia-
   - `docker pull ghcr.io/fluent/fluentd-kubernetes-daemonset:v1-debian-elasticsearch`
 - `Opensearch` [Dockerfile](docker-image/v1.14/debian-opensearch/Dockerfile)
   - `docker pull ghcr.io/fluent/fluentd-kubernetes-daemonset:v1.14.4-debian-opensearch-1.3`
-  - `docker pull ghcr.io/fluent/fluentd-kubernetes-daemonset:v1.14-debian-open-1`
+  - `docker pull ghcr.io/fluent/fluentd-kubernetes-daemonset:v1.14-debian-opensearch-1`
   - `docker pull ghcr.io/fluent/fluentd-kubernetes-daemonset:v1-debian-opensearch`
 - `Forward` [Dockerfile](docker-image/v1.14/debian-forward/Dockerfile)
   - `docker pull ghcr.io/fluent/fluentd-kubernetes-daemonset:v1.14.4-debian-forward-1.0`
