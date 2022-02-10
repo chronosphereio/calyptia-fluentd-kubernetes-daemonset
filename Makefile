@@ -12,10 +12,10 @@
 
 IMAGE_NAME := ghcr.io/calyptia/calyptia-fluentd-kubernetes-daemonset
 IMAGES :=\
-	v1.14/debian-elasticsearch7:v1.14.4-debian-elasticsearch7-1.0,v1.14-debian-elasticsearch7-1,v1-debian-elasticsearch \
-	v1.14/debian-opensearch:v1.14.4-debian-opensearch-1.3,v1.14-debian-opensearch-1,v1-debian-opensearch \
-	v1.14/debian-forward:v1.14.4-debian-forward-1.0,v1.14-debian-forward-1,v1-debian-forward \
-	v1.14/debian-kafka2:v1.14.4-debian-kafka2-1.0,v1.14-debian-kafka2-amd64-1,v1-debian-kafka2 \
+	v1.14/debian-elasticsearch7:v1.14.5-debian-elasticsearch7-1.0,v1.14-debian-elasticsearch7-1,v1-debian-elasticsearch \
+	v1.14/debian-opensearch:v1.14.5-debian-opensearch-1.3,v1.14-debian-opensearch-1,v1-debian-opensearch \
+	v1.14/debian-forward:v1.14.5-debian-forward-1.0,v1.14-debian-forward-1,v1-debian-forward \
+	v1.14/debian-kafka2:v1.14.5-debian-kafka2-1.0,v1.14-debian-kafka2-amd64-1,v1-debian-kafka2 \
 
 #	<Dockerfile>:<version>,<tag1>,<tag2>,...
 
