@@ -115,7 +115,7 @@ GEM
     http_parser.rb (0.8.0)
     jsonpath (1.1.0)
       multi_json
-    kubeclient (4.9.2)
+    kubeclient (4.9.3)
       http (>= 3.0, < 5.0)
       jsonpath (~> 1.0)
       recursive-open-struct (~> 1.1, >= 1.1.1)
@@ -152,7 +152,7 @@ GEM
       tzinfo (>= 1.0.0)
     unf (0.1.4)
       unf_ext
-    unf_ext (0.0.8)
+    unf_ext (0.0.8.1)
     webrick (1.7.0)
     yajl-ruby (1.4.1)
 
