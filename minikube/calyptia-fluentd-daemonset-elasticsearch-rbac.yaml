@@ -59,6 +59,8 @@ spec:
       tolerations:
       - key: node-role.kubernetes.io/master
         effect: NoSchedule
+      - key: node-role.kubernetes.io/control-plane
+        effect: NoSchedule
       containers:
       - name: calyptia-fluentd
         image: ghcr.io/calyptia/calyptia-fluentd-kubernetes-daemonset:v1-debian-elasticsearch
