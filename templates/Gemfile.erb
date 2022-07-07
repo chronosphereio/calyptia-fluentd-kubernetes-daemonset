@@ -19,11 +19,15 @@ gem "fluent-plugin-rewrite-tag-filter", "~> 2.4.0"
 gem "fluent-plugin-parser-cri", "~> 0.1.0"
 <% case target when "elasticsearch7" %>
 gem "elasticsearch", "~> 7.0"
-gem "fluent-plugin-elasticsearch", "~> 5.1.0"
+gem "fluent-plugin-elasticsearch", "~> 5.2.3"
 gem "elasticsearch-xpack", "~> 7.0"
 gem "fluent-plugin-dedot_filter", "~> 1.0"
+<% when "elasticsearch8" %>
+gem "elasticsearch", "~> 8.0"
+gem "fluent-plugin-elasticsearch", "~> 5.2.3"
+gem "fluent-plugin-dedot_filter", "~> 1.0"
 <% when "opensearch" %>
-gem "opensearch-ruby", "~> 1.0"
+gem "opensearch-ruby", "~> 2.0"
 gem "fluent-plugin-opensearch", "~> 1.0"
 gem "fluent-plugin-dedot_filter", "~> 1.0"
 gem "aws-sdk-core", "~> 3.125"
@@ -36,7 +40,7 @@ gem "fluent-plugin-avro", "~> 1.1.1"
 gem "fluent-plugin-parser-avro", "~> 0.3.1"
 gem "snappy", "~> 0.0.15"
 <% end %>
-gem "fluent-plugin-kubernetes_metadata_filter", "~> 2.9.1"
+gem "fluent-plugin-kubernetes_metadata_filter", "~> 2.13.0"
 <% if !is_alpine %>
 gem "ffi"
 gem "fluent-plugin-systemd", "~> 1.0.5"

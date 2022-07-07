@@ -13,10 +13,11 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - dockerfile: v1.14/debian-elasticsearch7
-          - dockerfile: v1.14/debian-forward
-          - dockerfile: v1.14/debian-kafka2
-          - dockerfile: v1.14/debian-opensearch
+          - dockerfile: v1.15/debian-elasticsearch7
+          - dockerfile: v1.15/debian-elasticsearch8
+          - dockerfile: v1.15/debian-forward
+          - dockerfile: v1.15/debian-kafka2
+          - dockerfile: v1.15/debian-opensearch
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2

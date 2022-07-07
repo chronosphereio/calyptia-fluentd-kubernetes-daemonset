@@ -12,18 +12,17 @@
 
 IMAGE_NAME := ghcr.io/calyptia/calyptia-fluentd-kubernetes-daemonset
 IMAGES :=\
-	v1.14/debian-elasticsearch7:v1.14.6-debian-elasticsearch7-1.0,v1.14-debian-elasticsearch7-1,v1-debian-elasticsearch \
-	v1.14/debian-opensearch:v1.14.6-debian-opensearch-1.0,v1.14-debian-opensearch-1,v1-debian-opensearch \
-	v1.14/debian-forward:v1.14.6-debian-forward-1.0,v1.14-debian-forward-1,v1-debian-forward \
-	v1.14/debian-kafka2:v1.14.6-debian-kafka2-1.0,v1.14-debian-kafka2-amd64-1,v1-debian-kafka2 \
+	v1.15/debian-elasticsearch7:v1.15.0-debian-elasticsearch7-1.0,v1.15-debian-elasticsearch7-1,v1-debian-elasticsearch \
+	v1.15/debian-elasticsearch8:v1.15.0-debian-elasticsearch8-1.0,v1.15-debian-elasticsearch8-1,v1-debian-elasticsearch8 \
+	v1.15/debian-opensearch:v1.15.0-debian-opensearch-1.0,v1.15-debian-opensearch-1,v1-debian-opensearch \
+	v1.15/debian-forward:v1.15.0-debian-forward-1.0,v1.15-debian-forward-1,v1-debian-forward \
+	v1.15/debian-kafka2:v1.15.0-debian-kafka2-1.0,v1.15-debian-kafka2-amd64-1,v1-debian-kafka2 \
 
 #	<Dockerfile>:<version>,<tag1>,<tag2>,...
 
 ALL_IMAGES := $(IMAGES) # We provides buildx sub command built images.
 
 PLATFORMS := linux/amd64,linux/arm64
-
-NEED_AWS_CREDENTIALS_IMAGE := v1.14/debian-opensearch
 
 comma := ,
 empty :=
@@ -35,6 +34,8 @@ TARGET ?= $(word 2,$(subst -, , $(DOCKERFILE)))
 
 # Gets the version value based on the directory the dockerfile is in.
 FLUENTD_VERSION ?= $(word 1,$(subst /, ,$(DOCKERFILE)))
+
+NEED_AWS_CREDENTIALS_IMAGE := ${FLUENTD_VERSION}/debian-opensearch
 
 # Finds the image tags based on whatever DOCKERFILE is set to, even if the user
 # has passed DOCKERFILE explicitly
