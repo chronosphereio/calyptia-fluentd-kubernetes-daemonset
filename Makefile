@@ -12,11 +12,11 @@
 
 IMAGE_NAME := ghcr.io/calyptia/calyptia-fluentd-kubernetes-daemonset
 IMAGES :=\
-	v1.15/debian-elasticsearch7:v1.15.0-debian-elasticsearch7-1.0,v1.15-debian-elasticsearch7-1,v1-debian-elasticsearch \
-	v1.15/debian-elasticsearch8:v1.15.0-debian-elasticsearch8-1.0,v1.15-debian-elasticsearch8-1,v1-debian-elasticsearch8 \
-	v1.15/debian-opensearch:v1.15.0-debian-opensearch-1.0,v1.15-debian-opensearch-1,v1-debian-opensearch \
-	v1.15/debian-forward:v1.15.0-debian-forward-1.0,v1.15-debian-forward-1,v1-debian-forward \
-	v1.15/debian-kafka2:v1.15.0-debian-kafka2-1.0,v1.15-debian-kafka2-amd64-1,v1-debian-kafka2 \
+	v1.15/debian-elasticsearch7:v1.15.1-debian-elasticsearch7-1.0,v1.15-debian-elasticsearch7-1,v1-debian-elasticsearch \
+	v1.15/debian-elasticsearch8:v1.15.1-debian-elasticsearch8-1.0,v1.15-debian-elasticsearch8-1,v1-debian-elasticsearch8 \
+	v1.15/debian-opensearch:v1.15.1-debian-opensearch-1.0,v1.15-debian-opensearch-1,v1-debian-opensearch \
+	v1.15/debian-forward:v1.15.1-debian-forward-1.0,v1.15-debian-forward-1,v1-debian-forward \
+	v1.15/debian-kafka2:v1.15.1-debian-kafka2-1.0,v1.15-debian-kafka2-amd64-1,v1-debian-kafka2 \
 
 #	<Dockerfile>:<version>,<tag1>,<tag2>,...
 
