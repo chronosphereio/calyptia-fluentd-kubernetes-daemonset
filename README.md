@@ -8,67 +8,66 @@ See also GitHub container repository page: https://github.com/calyptia/calyptia-
 
 ##### Multi-Arch images
 - `Elasticsearch7`
-  - `docker pull ghcr.io/calyptia/calyptia-fluentd-kubernetes-daemonset:v1.15.2-debian-elasticsearch7-1.0`
+  - `docker pull ghcr.io/calyptia/calyptia-fluentd-kubernetes-daemonset:v1.15.3-debian-elasticsearch7-1.0`
   - `docker pull ghcr.io/calyptia/calyptia-fluentd-kubernetes-daemonset:v1.15-debian-elasticsearch7-1`
   - `docker pull ghcr.io/calyptia/calyptia-fluentd-kubernetes-daemonset:v1-debian-elasticsearch`
 - `Elasticsearch8`
-  - `docker pull ghcr.io/calyptia/calyptia-fluentd-kubernetes-daemonset:v1.15.2-debian-elasticsearch8-1.0`
+  - `docker pull ghcr.io/calyptia/calyptia-fluentd-kubernetes-daemonset:v1.15.3-debian-elasticsearch8-1.0`
   - `docker pull ghcr.io/calyptia/calyptia-fluentd-kubernetes-daemonset:v1.15-debian-elasticsearch8-1`
   - `docker pull ghcr.io/calyptia/calyptia-fluentd-kubernetes-daemonset:v1-debian-elasticsearch8`
 - `Opensearch`
-  - `docker pull ghcr.io/calyptia/calyptia-fluentd-kubernetes-daemonset:v1.15.2-debian-opensearch-1.1`
+  - `docker pull ghcr.io/calyptia/calyptia-fluentd-kubernetes-daemonset:v1.15.3-debian-opensearch-1.0`
   - `docker pull ghcr.io/calyptia/calyptia-fluentd-kubernetes-daemonset:v1.15-debian-opensearch-1`
   - `docker pull ghcr.io/calyptia/calyptia-fluentd-kubernetes-daemonset:v1-debian-opensearch`
 - `Forward`
-  - `docker pull ghcr.io/calyptia/calyptia-fluentd-kubernetes-daemonset:v1.15.2-debian-forward-1.0`
+  - `docker pull ghcr.io/calyptia/calyptia-fluentd-kubernetes-daemonset:v1.15.3-debian-forward-1.0`
   - `docker pull ghcr.io/calyptia/calyptia-fluentd-kubernetes-daemonset:v1.15-debian-forward-1`
   - `docker pull ghcr.io/calyptia/calyptia-fluentd-kubernetes-daemonset:v1-debian-forward`
 - `Kafka2`
-  - `docker pull ghcr.io/calyptia/calyptia-fluentd-kubernetes-daemonset:v1.15.2-debian-kafka2-1.0`
+  - `docker pull ghcr.io/calyptia/calyptia-fluentd-kubernetes-daemonset:v1.15.3-debian-kafka2-1.0`
   - `docker pull ghcr.io/calyptia/calyptia-fluentd-kubernetes-daemonset:v1.15-debian-kafka2-1`
   - `docker pull ghcr.io/calyptia/calyptia-fluentd-kubernetes-daemonset:v1-debian-kafka2`
 
 ##### x86_64 images
 - `Elasticsearch7` [Dockerfile](docker-image/v1.15/debian-elasticsearch7/Dockerfile)
-  - `docker pull ghcr.io/calyptia/calyptia-fluentd-kubernetes-daemonset:v1.15.2-debian-elasticsearch7-1.0`
+  - `docker pull ghcr.io/calyptia/calyptia-fluentd-kubernetes-daemonset:v1.15.3-debian-elasticsearch7-1.0`
   - `docker pull ghcr.io/calyptia/calyptia-fluentd-kubernetes-daemonset:v1.15-debian-elasticsearch7-1`
   - `docker pull ghcr.io/calyptia/calyptia-fluentd-kubernetes-daemonset:v1-debian-elasticsearch`
 - `Elasticsearch8` [Dockerfile](docker-image/v1.15/debian-elasticsearch8/Dockerfile)
-  - `docker pull ghcr.io/calyptia/calyptia-fluentd-kubernetes-daemonset:v1.15.2-debian-elasticsearch8-1.0`
+  - `docker pull ghcr.io/calyptia/calyptia-fluentd-kubernetes-daemonset:v1.15.3-debian-elasticsearch8-1.0`
   - `docker pull ghcr.io/calyptia/calyptia-fluentd-kubernetes-daemonset:v1.15-debian-elasticsearch8-1`
   - `docker pull ghcr.io/calyptia/calyptia-fluentd-kubernetes-daemonset:v1-debian-elasticsearch8`
 - `Opensearch` [Dockerfile](docker-image/v1.15/debian-opensearch/Dockerfile)
-  - `docker pull ghcr.io/calyptia/calyptia-fluentd-kubernetes-daemonset:v1.15.2-debian-opensearch-1.1`
-  - `docker pull ghcr.io/calyptia/calyptia-fluentd-kubernetes-daemonset:v1.15-debian-opensearch-1`
+  - `docker pull ghcr.io/calyptia/calyptia-fluentd-kubernetes-daemonset:v1.15.3-debian-opensearch-1.0`
   - `docker pull ghcr.io/calyptia/calyptia-fluentd-kubernetes-daemonset:v1-debian-opensearch`
 - `Forward` [Dockerfile](docker-image/v1.15/debian-forward/Dockerfile)
-  - `docker pull ghcr.io/calyptia/calyptia-fluentd-kubernetes-daemonset:v1.15.2-debian-forward-1.0`
+  - `docker pull ghcr.io/calyptia/calyptia-fluentd-kubernetes-daemonset:v1.15.3-debian-forward-1.0`
   - `docker pull ghcr.io/calyptia/calyptia-fluentd-kubernetes-daemonset:v1.15-debian-forward-1`
   - `docker pull ghcr.io/calyptia/calyptia-fluentd-kubernetes-daemonset:v1-debian-forward`
 - `Kafka2` [Dockerfile](docker-image/v1.15/debian-kafka2/Dockerfile)
-  - `docker pull ghcr.io/calyptia/calyptia-fluentd-kubernetes-daemonset:v1.15.2-debian-kafka2-1.0`
+  - `docker pull ghcr.io/calyptia/calyptia-fluentd-kubernetes-daemonset:v1.15.3-debian-kafka2-1.0`
   - `docker pull ghcr.io/calyptia/calyptia-fluentd-kubernetes-daemonset:v1.15-debian-kafka2-1`
   - `docker pull ghcr.io/calyptia/calyptia-fluentd-kubernetes-daemonset:v1-debian-kafka2`
 
 ##### arm64 images
 - `Elasticsearch7` [Dockerfile](docker-image/v1.15/debian-elasticsearch7/Dockerfile)
-  - `docker pull ghcr.io/calyptia/calyptia-fluentd-kubernetes-daemonset:v1.15.2-debian-elasticsearch7-1.0`
+  - `docker pull ghcr.io/calyptia/calyptia-fluentd-kubernetes-daemonset:v1.15.3-debian-elasticsearch7-1.0`
   - `docker pull ghcr.io/calyptia/calyptia-fluentd-kubernetes-daemonset:v1.15-debian-elasticsearch7-1`
   - `docker pull ghcr.io/calyptia/calyptia-fluentd-kubernetes-daemonset:v1-debian-elasticsearch`
 - `Elasticsearch8` [Dockerfile](docker-image/v1.15/debian-elasticsearch8/Dockerfile)
-  - `docker pull ghcr.io/calyptia/calyptia-fluentd-kubernetes-daemonset:v1.15.2-debian-elasticsearch8-1.0`
+  - `docker pull ghcr.io/calyptia/calyptia-fluentd-kubernetes-daemonset:v1.15.3-debian-elasticsearch8-1.0`
   - `docker pull ghcr.io/calyptia/calyptia-fluentd-kubernetes-daemonset:v1.15-debian-elasticsearch8-1`
   - `docker pull ghcr.io/calyptia/calyptia-fluentd-kubernetes-daemonset:v1-debian-elasticsearch8`
 - `Opensearch` [Dockerfile](docker-image/v1.15/debian-opensearch/Dockerfile)
-  - `docker pull ghcr.io/calyptia/calyptia-fluentd-kubernetes-daemonset:v1.15.2-debian-opensearch-1.1`
+  - `docker pull ghcr.io/calyptia/calyptia-fluentd-kubernetes-daemonset:v1.15.3-debian-opensearch-1.0`
   - `docker pull ghcr.io/calyptia/calyptia-fluentd-kubernetes-daemonset:v1.15-debian-opensearch-1`
   - `docker pull ghcr.io/calyptia/calyptia-fluentd-kubernetes-daemonset:v1-debian-opensearch`
 - `Forward` [Dockerfile](docker-image/v1.15/debian-forward/Dockerfile)
-  - `docker pull ghcr.io/calyptia/calyptia-fluentd-kubernetes-daemonset:v1.15.2-debian-forward-1.0`
+  - `docker pull ghcr.io/calyptia/calyptia-fluentd-kubernetes-daemonset:v1.15.3-debian-forward-1.0`
   - `docker pull ghcr.io/calyptia/calyptia-fluentd-kubernetes-daemonset:v1.15-debian-forward-1`
   - `docker pull ghcr.io/calyptia/calyptia-fluentd-kubernetes-daemonset:v1-debian-forward`
 - `Kafka2` [Dockerfile](docker-image/v1.15/debian-kafka2/Dockerfile)
-  - `docker pull ghcr.io/calyptia/calyptia-fluentd-kubernetes-daemonset:v1.15.2-debian-kafka2-1.0`
+  - `docker pull ghcr.io/calyptia/calyptia-fluentd-kubernetes-daemonset:v1.15.3-debian-kafka2-1.0`
   - `docker pull ghcr.io/calyptia/calyptia-fluentd-kubernetes-daemonset:v1.15-debian-kafka2-1`
   - `docker pull ghcr.io/calyptia/calyptia-fluentd-kubernetes-daemonset:v1-debian-kafka2`
 
