@@ -135,7 +135,7 @@ GEM
     multi_json (1.15.0)
     multipart-post (2.2.3)
     netrc (0.11.0)
-    nokogiri (1.13.9)
+    nokogiri (1.13.10)
       mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
     oj (3.13.3)
@@ -149,7 +149,7 @@ GEM
       multi_json
     prometheus-client (4.0.0)
     public_suffix (5.0.0)
-    racc (1.6.0)
+    racc (1.6.1)
     rake (13.0.6)
     recursive-open-struct (1.1.3)
     rest-client (2.1.0)
